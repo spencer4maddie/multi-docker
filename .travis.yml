@@ -11,14 +11,14 @@ script:
   - docker run xg/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t xg/multi-client ./client
-  - docker build -t xg/multi-nginx ./nginx
-  - docker build -t xg/multi-server ./server
-  - docker build -t xg/multi-worker ./worker
+  - docker build -t spencer4maddie/multi-client ./client
+  - docker build -t spencer4maddie/multi-nginx ./nginx
+  - docker build -t spencer4maddie/multi-server ./server
+  - docker build -t spencer4maddie/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push xg/multi-client
-  - docker push xg/multi-nginx
-  - docker push xg/multi-server
-  - docker push xg/multi-worker
+  - docker push spencer4maddie/multi-client
+  - docker push spencer4maddie/multi-nginx
+  - docker push spencer4maddie/multi-server
+  - docker push spencer4maddie/multi-worker
