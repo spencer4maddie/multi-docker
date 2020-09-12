@@ -22,5 +22,3 @@ after_success:
   - docker push xg/multi-nginx
   - docker push xg/multi-server
   - docker push xg/multi-worker
-
-
